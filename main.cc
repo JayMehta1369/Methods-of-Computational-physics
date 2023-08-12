@@ -1,5 +1,6 @@
 #include "myhead.h"
 #include "MDsim.h"
+#include <fstream>
 
 void readin(Params & mypars);
 void pheader(Params & mypars);
@@ -14,8 +15,9 @@ int main()
 
       MDsim mysim(simparams);
       mysim.Initialize();
-      for (int step=1; step <= simparams.stepLimit; step++) mysim.SingleStep();
-
+      for (int step=1; step <= simparams.stepLimit; step++) {
+            mysim.SingleStep();
+      }
       
       return 0;
 }
